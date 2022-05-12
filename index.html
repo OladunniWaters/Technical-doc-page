@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <header>
+            Solana Documentation
+        </header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Terminology">Terminology</a></li>
+            <li><a class="nav-link" href="#History">History</a></li>
+            <li><a class="nav-link" href="#Wallets">Wallets</a></li>
+            <li><a class="nav-link" href="#Staking">Staking</a></li>
+            <li><a class="nav-link" href="#Economics">Economics</a></li>
+            <li><a class="nav-link" href="#Developing">Developing</a></li>
+            
+        </ul>
+    </nav>
+    <main class="main-doc" id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>
+                Introduction
+            </header>
+            <article>
+            <p class="sub">
+                What is Solana?
+            </p>
+            <p>
+                Solana is an open source project focused
+                on  fast transactions. Users of this
+                blockchain network pay their transaction 
+                fees with the network's native 
+                cryptocurrency SOL.
+            </p>
+            
+            <p class="sub">
+                How does Solana work?
+            </p>
+            
+            <p>
+                Solana is a third-generation, proof of 
+                Stake blockchain. It has implemented a 
+                unique way of creating a trustless system 
+                for determining the time of a transaction 
+                called Proof of History.<br/> 
+                Proof of History 
+                differs from the process Bitcoin uses as 
+                part of its Proof of Work consensus 
+                mechanism.<br />
+                Proof of History is a sequence 
+                of computation that can provide a way to 
+                cryptographically verify passage of time 
+                between two events. It uses a 
+                cryptographically secure function written 
+                so that output cannot be predicted from 
+                the input, and must be completely execute
+                to generate the output
+            </p>
+            </article>
+        </section>
+        
+        <section class="main-section" id="Terminology">
+            <header>
+                Terminology
+            </header>
+            <article>
+                <p>
+                    The following terms are used throughout the 
+                    documentation.
+                </p>
+                <ul>
+                    <li>
+                        <strong>
+                           <code>account</code>
+                        </strong>-<p>A record in the Solana ledger that either holds data or is an executable program.
+                            Like an account at a traditional bank, a 
+                            Solana account may hold funds called 
+                            lamports. Like a file in Linux, it is 
+                            public key or pubkey.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>account owner</code>
+                        </strong>-<p>The address of the program that owns the account. Only the owning program is capable of modifying the account.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>bank state</code>
+                        </strong>-<p>The result of interpreting all programs on the ledger at a given tick height. It includes at least the set of all accounts holding non zero native tokens.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>block</code>
+                        </strong>-<p>A contiguous set of entries on the ledger covered by a vote. A leader produces at most one block per slot.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>client</code>
+                        </strong>-<p>A computer program that accesses the Solana server network cluster.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>cooldown period</code>
+                        </strong>-<p>Some number of epochs after stake has been deactivated while it progressively becomes available for withdrawal. During this period, the stake is considered to be "deactivating". More info about: warmup and cooldown.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                            <code>data plane</code>
+                        </strong>-<p>A multicast network used to efficiently validate entries and gain consensus.</p>
+                    </li>
+                    <br/>
+                    <li>
+                        <strong>
+                           <code>drone</code>
+                        </strong>-<p>An off-chain service that acts as a custodian for a user's private key. It typically serves to validate and sign transactions.</p>
+                    </li>
+                </ul>
+                
+            </article>
+        </section>
+        
+        <section class="main-section" id="History">
+            <header>
+               History 
+            </header>
+            <article>
+                <p>
+                    Founded in November,2017 by Anatoly Yakovenko from 
+                    Solana 
+                    Labs, the Solana blockchain adopts a new method of 
+                    verifying transactions. Bitcoin, Ethereum, and many 
+                    other projects suffer from scalability and speed 
+                    issues. Using a method known as Proof of History 
+                    transactions per second.
+                </p>
+                
+                <p>
+                    Anatoly watched as blockchain systems without clocks, such as Bitcoin and Ethereum, struggled to scale beyond 15 transactions per second worldwide when centralized payment systems such as Visa required peaks of 65,000 tps. Without a clock, it was clear they'd never graduate to being the global payment system or global supercomputer most had dreamed them to be. When Anatoly solved the problem of getting computers that don’t trust each other to agree on time, he knew he had the key to bring 40 years of distributed systems research to the world of blockchain. The resulting cluster wouldn't be just 10 times faster, or a 100 times, or a 1,000 times, but 10,000 times faster, right out of the gate!
+                </p>
+                <p>
+                    Anatoly's implementation began in a private codebase and was implemented in the C programming language. Greg Fitzgerald, who had previously worked with Anatoly at semiconductor giant Qualcomm Incorporated, encouraged him to reimplement the project in the Rust programming language. Greg had worked on the LLVM compiler infrastructure, which underlies both the Clang C/C++ compiler as well as the Rust compiler. Greg claimed that the language's safety guarantees would improve software productivity and that its lack of a garbage collector would allow programs to perform as well as those written in C. Anatoly gave it a shot and just two weeks later, had migrated his entire codebase to Rust. Sold. With plans to weave all the world's transactions together on a single, scalable blockchain, Anatoly called the project Loom.
+                </p>
+                <p>
+                    On February 13th of 2018, Greg began prototyping the first open source implementation of Anatoly's whitepaper. The project was published to GitHub under the name Silk in the loomprotocol organization. On February 28th, Greg made his first release, demonstrating 10 thousand signed transactions could be verified and processed in just over half a second. Shortly after, another former Qualcomm cohort, Stephen Akridge, demonstrated throughput could be massively improved by offloading signature verification to graphics processors. Anatoly recruited Greg, Stephen and three others to co-found a company, then called Loom.
+                </p>
+                <p>
+                    Around the same time, Ethereum-based project Loom Network sprung up and many people were confused about whether they were the same project. The Loom team decided it would rebrand. They chose the name Solana, a nod to a small beach town North of San Diego called Solana Beach, where Anatoly, Greg and Stephen lived and surfed for three years when they worked for Qualcomm. On March 28th, the team created the Solana GitHub organization and renamed Greg's prototype Silk to Solana.
+                </p>
+                <p>
+                    In June of 2018, the team scaled up the technology to run on cloud-based networks and on July 19th, published a 50-node, permissioned, public testnet consistently supporting bursts of 250,000 transactions per second. In a later release in December, called v0.10 Pillbox, the team published a permissioned testnet running 150 nodes on a gigabit network and demonstrated soak tests processing an average of 200 thousand transactions per second with bursts over 500 thousand. The project was also extended to support on-chain programs written in the C programming language and run concurrently in a safe execution environment called BPF.
+                </p>
+            </article>
+        </section>
+        
+        <section class="main-section" id="Wallets">
+            <header>
+                Wallets
+            </header>
+            <article>
+                    <p class="sub">
+                        What is a wallet?
+                    </p>        
+                        <p>A crypto wallet is a device or application that stores a collection of keys and can be used to send, receive, and track ownership of cryptocurrencies. Wallets can take many forms. A wallet might be a directory or file in your computer's file system, a piece of paper, or a specialized device called a hardware wallet. There are also various smartphone apps and computer programs that provide a user-friendly way to create and manage wallets.
+                    </p>
+
+                    <p class="sub">
+                        Supported Wallets
+                    </p>    
+                        <p>Several browser and mobile app based wallets support Solana. Find the right one for you on the <a class="links" href="https://solana.com/ecosystem/explore?categories=wallet" target="_blank" >Solana Ecosystem page</a>.
+                        <br/>
+                            For advanced users or developers, the <a href="https://docs.solana.com/wallet-guide/cli" target="_blank" class="links">command-line wallets</a> may be more appropriate
+                            , as new features on the Solana blockchain 
+                            first before being integrated into third
+                            -party solutions. 
+                    </p>
+            </article>
+        </section>
+        
+        <section class="main-section" id="Staking">
+            <header>
+                Staking
+            </header>
+            <article>
+                <p>
+                    By staking your SOL tokens, you help secure the 
+                    network and earn rewards while doing so.
+                    
+                    You can stake by delegating your tokens to 
+                    validators who process transactions and run the 
+                    network.
+                <br/>    
+                    Delegating stake is a shared-risk shared-reward 
+                    financial model that may provide returns to holders 
+                    of tokens delegated for a long period. This is 
+                    token-holders (delegators) and the validators to 
+                    whom they delegate.
+                </p>
+                <p>
+                    The more stake delegated to a validator, the more 
+                    often this validator is chosen to write new 
+                    transactions to the ledger. The more transactions 
+                    and its delegators earn. Validators who configure 
+                    their systems to be able to process more 
+                    transactions earn proportionally more rewards and 
+                    smoothly as possible.
+                </p>
+                <p>
+                    Validators incur costs by running and maintaining 
+                    their systems, and this is passed on to delegators 
+                    in the form of a fee collected as a percentage of 
+                    rewards earned. This fee is known as a commission. 
+                    delegated to them, they may compete with one another
+                    to offer the lowest commission for their services.
+                </p>
+            </article>
+        </section>
+        
+        <section class="main-section" id="Economics">
+            <header>
+                Economics
+            </header>
+            <article>
+                <p>
+                    Solana’s crypto-economic system is designed to 
+                    promote a healthy, long term self-sustaining economy
+                    with participant incentives aligned to the security 
+                    and decentralization of the network. The main 
+                    participants in this economy are validation-clients.
+                    Their contributions to the network, state validation
+                    , and their requisite incentive mechanisms are 
+                    discussed below.
+                </p>
+                <p>
+                    The main channels of participant remittances are referred to as protocol-based rewards and transaction fees. Protocol-based rewards are generated from inflationary issuances from a protocol-defined inflation schedule. These rewards will constitute the total protocol-based reward delivered to validation clients, the remaining sourced from transaction fees. In the early days of the network, it is likely that protocol-based rewards, deployed based on predefined issuance schedule, will drive the majority of participant incentives to participate in the network.
+                </p>
+                <p>
+                    These protocol-based rewards are calculated per epoch and distributed across the active delegated stake and validator set (per validator commission). As discussed further below, the per annum inflation rate is based on a pre-determined disinflationary schedule. This provides the network with supply predictability which supports long term economic stability and security.
+                </p>
+            </article>
+        </section>
+        
+        <section class="main-section" id="Developing">
+            <header>
+                Developing
+            </header>
+            <article>
+                <p>
+                    An app interacts with a Solana cluster by sending it transactions with one or more instructions. The Solana runtime passes those instructions to programs deployed by app developers beforehand. An instruction might, for example, tell a program to transfer lamports from one account to another or create an interactive contract that governs how lamports are transferred. Instructions are executed sequentially and atomically for each transaction. If any instruction is invalid, all account changes in the transaction are discarded.
+                    
+                    To start developing immediately you can build, deploy, and run one of the <a href="https://docs.solana.com/developing/on-chain-programs/examples" class="links">examples</a>.
+                </p>
+            </article>
+        </section>
+        <section class="main-section">
+            <header>
+            Reference
+            </header>
+            <article>
+                <ul>
+                    <li>
+                        All the documentation in this page is taken from
+                    </li>
+                    <a href="https://docs.solana.com/" target="_blank" alt="Solana Documentation" class="links">Solana Doc</a>
+                </ul>
+            </article>
+        </section>
+    </main>
+  <!-- Project -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
